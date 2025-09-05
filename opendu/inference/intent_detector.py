@@ -127,7 +127,7 @@ class BcIntentDetector:
                 {
                     "owner": demostration.skill.label,
                     "evidence": [],
-                    "utterance": "",
+                    "utterance": text,
                 }
             )
         
