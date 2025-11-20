@@ -205,4 +205,10 @@ if __name__ == "__main__":
     # This load the generator LLM first.
     EmbeddingStore.get_embedding_by_task(EmbeddingType.DESC)
     Decoder.get()
-    web.run_app(init_app(root_path, lru_capacity), port=3001)
+    app = init_app(root_path, lru_capacity)
+
+    # Let me write this to file?
+    with open("/tmp/rau_ready.flag", "w") as f:
+        f.write("ready")
+    
+    web.run_app(app, port=3001)
